@@ -18,6 +18,7 @@ public class AnxietyTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        
+         
+
     }
 }
