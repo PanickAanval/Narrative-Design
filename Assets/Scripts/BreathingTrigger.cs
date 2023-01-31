@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BreathingTrigger : MonoBehaviour
 {
-    [SerializeField] private FloatReference breathValue;
     [SerializeField] private PanicMechanic panic;
+    [SerializeField] private SliderBreath slider;
     void Start()
     {
         
@@ -13,9 +13,10 @@ public class BreathingTrigger : MonoBehaviour
 
     void Update()
     {
-        if(breathValue.Value <= 0f)
+        if(slider.breath.value <= 0f)
         {
             panic.Panic1();
+            slider.gameObject.SetActive(false);
         }
     }
 }

@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class SliderBreath : MonoBehaviour
 {
-    private Slider breath;
-    public bool isBreathing = true;
+    public Slider breath;
 
     void Start()
     {
         breath = GetComponent<Slider>();
-        breath.value = 1f;
-        StartCoroutine(downBreath());
+        resetSlider();
     }
 
     void Update()
@@ -23,12 +21,13 @@ public class SliderBreath : MonoBehaviour
         }
     }
 
-    private IEnumerator downBreath()
+    public void resetSlider()
     {
-        while(isBreathing)
-        {
-            breath.value -= 0.1f;
-            yield return new WaitForSeconds(1f);
-        }
+        breath.value = 1f;
+    }
+
+    private void FixedUpdate()
+    {
+        breath.value -= 0.01f;
     }
 }

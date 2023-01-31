@@ -20,7 +20,7 @@ public class ContollableBar : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                temp.y += 15f;
+                temp.y += 20f;
             }
         }
         else
@@ -41,7 +41,7 @@ public class ContollableBar : MonoBehaviour
 
     private void moveDown()
     {
-        temp.y -= 1f;
+        temp.y -= 2f;
         controllable.rectTransform.anchoredPosition = temp;
     }
 
