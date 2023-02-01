@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using StarterAssets;
 
 public class PanicMechanic : MonoBehaviour
 {
+    [SerializeField] private FirstPersonController fps;
     [SerializeField] private GameObject panic1UI;
     [SerializeField] private int panicLevel;
     [SerializeField] private List<GameObject> panic1Buttons;
     [SerializeField] private TMP_Text panicLevelText;
-    [SerializeField] private SliderBreath slider;
+
+    [SerializeField] private ContollableBar bar;
+    [SerializeField] private GameObject barObject;
     private int panic1ButtonIndex = 0;
     private int maxPanicLevel = 10;
 
@@ -67,9 +71,10 @@ public class PanicMechanic : MonoBehaviour
 
     public void Panic1()
     {
-        //stop moving
         if (!panic1UI.activeSelf)
         {
+            fps.enabled = false;
+
             panicLevel = maxPanicLevel;
             Cursor.lockState = CursorLockMode.None;
             panic1UI.SetActive(true);
@@ -84,10 +89,11 @@ public class PanicMechanic : MonoBehaviour
             StopAllCoroutines();
             Cursor.lockState = CursorLockMode.Locked;
             panic1UI.SetActive(false);
-            slider.gameObject.SetActive(true);
-            slider.resetSlider();
-        }
-        //start moving
-        
+
+            barObject.SetActive(true);
+            bar.isControlActive = true;
+
+            fps.enabled = true;
+        }      
     }
 }

@@ -7,6 +7,7 @@ public class ContollableBar : MonoBehaviour
 {
     [SerializeField] private Image controllable;
     [SerializeField] private GameObject panic2;
+    [SerializeField] private PanicMechanic panic;
     private Vector2 temp;
     public bool isControlActive = true;
     void Start()
@@ -18,16 +19,11 @@ public class ContollableBar : MonoBehaviour
     {
         if (isControlActive)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
-                temp.y += 20f;
+                temp.y += 2f;
+                controllable.rectTransform.anchoredPosition = temp;
             }
-        }
-        else
-        {
-            panic2.SetActive(false);
-            temp.y = 0;
-            controllable.rectTransform.anchoredPosition = temp;
         }
     }
 
@@ -48,5 +44,10 @@ public class ContollableBar : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isControlActive = false;
+        panic2.SetActive(false);
+        temp.y = 0;
+        controllable.rectTransform.anchoredPosition = temp;
+
+        panic.Panic1();
     }
 }
