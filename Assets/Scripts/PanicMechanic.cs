@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using StarterAssets;
+using UnityEngine.Audio;
 
 public class PanicMechanic : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class PanicMechanic : MonoBehaviour
     private int maxPanicLevel = 10;
 
     public bool isPanicking = false;
+
+    public AudioMixer musicMixer;
+    public AudioMixer heartbeatMixer;
 
     void Start()
     {
@@ -79,6 +83,10 @@ public class PanicMechanic : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             panic1UI.SetActive(true);
             StartCoroutine(IncreasePanic());
+
+            musicMixer.SetFloat("distortionLv", 0.85f);
+            musicMixer.SetFloat("musicVol", 0f);
+            heartbeatMixer.SetFloat("heartbeatVol", 20f);
         }  
         
     }
@@ -94,6 +102,10 @@ public class PanicMechanic : MonoBehaviour
             bar.isControlActive = true;
 
             fps.enabled = true;
+
+            musicMixer.SetFloat("distortionLv", 0f);
+            musicMixer.SetFloat("musicVol", 10f);
+            heartbeatMixer.SetFloat("heartbeatVol", -80f);
         }      
     }
 }
