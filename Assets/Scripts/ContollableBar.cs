@@ -8,6 +8,8 @@ public class ContollableBar : MonoBehaviour
     [SerializeField] private Image controllable;
     [SerializeField] private GameObject panic2;
     [SerializeField] private PanicMechanic panic;
+    [SerializeField] private AudioSource breathIn;
+    [SerializeField] private AudioSource breathOut;
     private Vector2 temp;
     public bool isControlActive = true;
     void Start()
@@ -19,8 +21,17 @@ public class ContollableBar : MonoBehaviour
     {
         if (isControlActive)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.Space))
             {
+                if (!breathIn.isPlaying)
+                {
+                    breathIn.Play();
+                }
+                else if (breathOut.isPlaying)
+                {
+                    breathOut.Stop();
+                }
+                
                 temp.y += 2f;
                 controllable.rectTransform.anchoredPosition = temp;
             }
@@ -37,6 +48,15 @@ public class ContollableBar : MonoBehaviour
 
     private void moveDown()
     {
+        if (!breathOut.isPlaying)
+        {
+            breathOut.Play();
+        }
+        else if (breathIn.isPlaying)
+        {
+            breathIn.Stop();
+        }
+
         temp.y -= 2f;
         controllable.rectTransform.anchoredPosition = temp;
     }

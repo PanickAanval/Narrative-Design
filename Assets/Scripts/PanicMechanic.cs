@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using StarterAssets;
 using UnityEngine.Audio;
 
@@ -10,14 +9,14 @@ public class PanicMechanic : MonoBehaviour
 {
     [SerializeField] private FirstPersonController fps;
     [SerializeField] private GameObject panic1UI;
-    [SerializeField] private int panicLevel;
+    [SerializeField] private float panicLevel;
     [SerializeField] private List<GameObject> panic1Buttons;
-    [SerializeField] private TMP_Text panicLevelText;
+    [SerializeField] private Slider panicLevelSlider;
 
     [SerializeField] private ContollableBar bar;
     [SerializeField] private GameObject barObject;
     private int panic1ButtonIndex = 0;
-    private int maxPanicLevel = 10;
+    private float startPanicLevel = 0.5f;
 
     public bool isPanicking = false;
 
@@ -26,7 +25,7 @@ public class PanicMechanic : MonoBehaviour
 
     void Start()
     {
-        panicLevel = maxPanicLevel;
+        
     }
 
     void Update()
@@ -36,17 +35,17 @@ public class PanicMechanic : MonoBehaviour
             PanicOver1();
             isPanicking = false;
         }
-        else if(panicLevel >= 15)
+        else if(panicLevel >= 1)
         {//bad
             PanicOver1();
             isPanicking = false;
         }
-        panicLevelText.text = panicLevel.ToString();
+        panicLevelSlider.value = panicLevel;
     }
 
     public void buttonPanicPressed()
     {
-        panicLevel -= 1;
+        panicLevel += 0.1f;
 
         if (panic1ButtonIndex <= panic1Buttons.Count)
         {
@@ -69,7 +68,7 @@ public class PanicMechanic : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f);
-            panicLevel++;
+            panicLevel -= 0.1f;
         }
     }
 
@@ -79,7 +78,7 @@ public class PanicMechanic : MonoBehaviour
         {
             fps.enabled = false;
 
-            panicLevel = maxPanicLevel;
+            panicLevel = startPanicLevel;
             Cursor.lockState = CursorLockMode.None;
             panic1UI.SetActive(true);
             StartCoroutine(IncreasePanic());
