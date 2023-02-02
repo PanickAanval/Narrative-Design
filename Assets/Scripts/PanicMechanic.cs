@@ -25,7 +25,7 @@ public class PanicMechanic : MonoBehaviour
 
     void Start()
     {
-        
+        panicLevel = startPanicLevel;
     }
 
     void Update()
