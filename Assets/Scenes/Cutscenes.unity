@@ -2713,7 +2713,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1442851291
+    rgba: 10715
   m_fontColor: {r: 0.8584906, g: 0.15906905, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4361,7 +4361,7 @@ GameObject:
   - component: {fileID: 824496158}
   - component: {fileID: 824496160}
   m_Layer: 0
-  m_Name: Timeline
+  m_Name: CutsceneTimeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
