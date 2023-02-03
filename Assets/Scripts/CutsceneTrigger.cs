@@ -4,6 +4,7 @@ public class CutsceneTrigger : MonoBehaviour
 {
     public GameObject Timeline;
     public GameObject ShadowFriend;
+    public GameObject Breathing;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class CutsceneTrigger : MonoBehaviour
         {
             Debug.Log("Collision");
             Timeline.SetActive(true);
+            Breathing.SetActive(false);
         }
 
     }

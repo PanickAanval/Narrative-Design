@@ -1145,7 +1145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86cf94f311f101429418ce3fe377da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breath: {fileID: 0}
 --- !u!1001 &222974788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2160,6 +2159,8 @@ MonoBehaviour:
   controllable: {fileID: 413407695}
   panic2: {fileID: 2088828133}
   panic: {fileID: 1383433966}
+  breathIn: {fileID: 0}
+  breathOut: {fileID: 0}
   isControlActive: 1
 --- !u!1001 &414340579
 PrefabInstance:
@@ -4359,7 +4360,6 @@ GameObject:
   m_Component:
   - component: {fileID: 824496159}
   - component: {fileID: 824496158}
-  - component: {fileID: 824496160}
   m_Layer: 0
   m_Name: CutsceneTimeline
   m_TagString: Untagged
@@ -4407,18 +4407,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &824496160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824496157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f121501e74fdf844a9d0d187b8360a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &824536037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6857,8 +6845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99e193aaac664c4c9d0474ce5bc2e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panic: {fileID: 1383433966}
-  slider: {fileID: 175878922}
 --- !u!4 &1383433965
 Transform:
   m_ObjectHideFlags: 0
@@ -6903,7 +6889,7 @@ MonoBehaviour:
   - {fileID: 1941458628}
   - {fileID: 1917854174}
   - {fileID: 2070616730}
-  panicLevelText: {fileID: 1837755035}
+  panicLevelSlider: {fileID: 0}
   bar: {fileID: 413407700}
   barObject: {fileID: 2088828133}
   isPanicking: 0
