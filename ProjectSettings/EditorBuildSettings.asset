@@ -11,4 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TransformedScene.unity
     guid: 42e8add26feaa1b4b838d83ed5b8a3f7
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: df8f6c9f67753544ba5f4c4f06714700
+  - enabled: 1
+    path: Assets/Scenes/EndCreditScene.unity
+    guid: 8afd1ab8afeac3b49804f62c3f405ab8
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

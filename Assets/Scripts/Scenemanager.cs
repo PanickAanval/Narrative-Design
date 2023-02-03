@@ -14,4 +14,15 @@ public class Scenemanager : MonoBehaviour
     {
         SceneManager.LoadScene("TransformedScene");
     }
+
+    public void endScene()
+    {
+        SceneManager.LoadScene("CreditScene");
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void creditScene()
+    {
+        SceneManager.LoadScene("EndCreditScene");
+    }
 }
