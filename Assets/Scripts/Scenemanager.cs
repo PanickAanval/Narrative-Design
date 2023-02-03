@@ -10,4 +10,8 @@ public class Scenemanager : MonoBehaviour
         SceneManager.LoadScene("MechanicTest");
     }
 
+    public void transformScene()
+    {
+        SceneManager.LoadScene("TransformedScene");
+    }
 }
