@@ -22,23 +22,26 @@ public class PanicMechanic : MonoBehaviour
 
     public AudioMixer musicMixer;
     public AudioMixer heartbeatMixer;
+    private Scenemanager scenemanager;
 
     void Start()
     {
         panicLevel = startPanicLevel;
+        scenemanager = FindObjectOfType<Scenemanager>();
     }
 
     void Update()
     {
-        if(panicLevel <= 0)
+        if(panicLevel >= 1)
         {//good
             PanicOver1();
             isPanicking = false;
         }
-        else if(panicLevel >= 1)
+        else if(panicLevel <= 0)
         {//bad
             PanicOver1();
             isPanicking = false;
+            scenemanager.restartScene();
         }
         panicLevelSlider.value = panicLevel;
     }
