@@ -5,6 +5,7 @@ public class CutsceneTrigger : MonoBehaviour
     public GameObject Timeline;
     public GameObject ShadowFriend;
     public GameObject Breathing;
+    public GameObject Player;
 
     void Start()
     {

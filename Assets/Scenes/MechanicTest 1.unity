@@ -2840,7 +2840,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 414340579}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 414340583}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
@@ -2854,6 +2854,11 @@ Transform:
 --- !u!4 &414340582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 414340579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &414340583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 414340579}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &415139599
@@ -9013,6 +9018,7 @@ MonoBehaviour:
   Timeline: {fileID: 699838001}
   ShadowFriend: {fileID: 403811006}
   Breathing: {fileID: 2088828133}
+  Player: {fileID: 414340583}
 --- !u!65 &1354885026
 BoxCollider:
   m_ObjectHideFlags: 0
